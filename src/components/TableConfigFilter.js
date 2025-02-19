@@ -187,15 +187,15 @@ const TableConfigFilter = ({
 
                         {/* Dropdown Menu */}
                         {isOpen && (
-                            <div className="absolute left-0 mt-2 w-64 bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 z-10">
-                                <div className="grid grid-cols-2 gap-4 p-4">
-                                    <div className="flex flex-col space-y-2">
+                            <div className="absolute left-0 mt-2 w-96 bg-white divide-y divide-gray-200 rounded-xl shadow-lg dark:bg-gray-800 z-10 p-4">
+                                <div className="grid grid-cols-2 gap-6">
+                                    <div className="flex flex-col space-y-4">
                                         <input
                                             type="text"
                                             name="projectFilter"
                                             value={inputs.projectFilter}
                                             onChange={tableColumnFilterHandler}
-                                            className="border p-2 rounded"
+                                            className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
                                             placeholder="Enter Project Name"
                                         />
                                         <input
@@ -203,39 +203,40 @@ const TableConfigFilter = ({
                                             name="statusFilter"
                                             value={inputs.statusFilter}
                                             onChange={tableColumnFilterHandler}
-                                            className="border p-2 rounded"
-                                            placeholder="Enter status"
+                                            className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                            placeholder="Enter Status"
                                         />
                                     </div>
-                                    <div className="flex flex-col space-y-2">
+                                    <div className="flex flex-col space-y-4">
                                         <input
                                             type="text"
                                             name="targetedFilter"
                                             value={inputs.targetedFilter}
                                             onChange={tableColumnFilterHandler}
-                                            className="border p-2 rounded"
-                                            placeholder="Enter target"
+                                            className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                            placeholder="Enter Target"
                                         />
                                     </div>
                                 </div>
 
                                 {/* Apply and Reset buttons */}
-                                <div className="flex justify-between px-4 py-2">
+                                <div className="flex justify-between mt-4">
                                     <button
                                         onClick={handleReset}
-                                        className="bg-red-500 text-white p-2 rounded"
+                                        className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md transition"
                                     >
                                         Reset
                                     </button>
                                     <button
                                         onClick={handleApply}
-                                        className="bg-blue-500 text-white p-2 rounded"
+                                        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md transition"
                                     >
                                         Apply
                                     </button>
                                 </div>
                             </div>
                         )}
+
                     </div>
                     <div className="relative" ref={dropdownRef2}>
                         {/* Dropdown Button */}

@@ -30,7 +30,7 @@ const SidebarPage = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 z-40 h-screen">
+        <div className="fixed top-19 left-0 z-40 h-screen">
             <div className="absolute top-4 left-2 p-2 rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
                 <button
                     onClick={handleToggleSidebar}
