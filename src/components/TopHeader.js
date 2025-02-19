@@ -9,8 +9,8 @@ import {
     Settings,
     LogOut,
 } from 'lucide-react';
-import logo from './assets/logop.png';
-import userPicture from './assets/userlogo.png';
+import logo from '../assets/logop.png';
+import userPicture from '../assets/userlogo.png';
 
 const TopHeader = () => {
     const [isProfileOpen, setIsProfileOpen] = useState(false);
