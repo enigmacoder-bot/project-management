@@ -43,7 +43,7 @@ const AccordionItem = ({
                 className={`transition-all duration-200 overflow-hidden ${isOpen ? 'max-h-screen' : 'max-h-0'}`}
                 aria-labelledby={`accordion-heading-${index}`}
             >
-                <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 max-h-[calc(100vh-10rem)] overflow-y-auto">
                     {children}
                 </div>
             </div>
@@ -74,7 +74,7 @@ const TasksAccordion = ({ items, defaultOpen = 0, allowMultiple = false }) => {
     };
 
     return (
-        <div className="w-full" data-accordion="collapse">
+        <div className="left-0 w-full h-[100vh] overflow-y-auto" data-accordion="collapse">
             {items.map((item, index) => (
                 <AccordionItem
                     key={index}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LayoutList } from "lucide-react"; // Import the new icon
+import { Zap, Users, ShoppingBag, BarChart2 } from "lucide-react";
 
 const TableConfig = ({ children, updateFilters }) => {
     const [selectedTaskFilter, setSelectedTaskFilter] = useState("open");
@@ -20,10 +20,8 @@ const TableConfig = ({ children, updateFilters }) => {
             <div className="max-w-7xl py-5 px-5 lg:px-0 xl:px-0">
                 {/* STATS */}
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                    {/* Open Tasks Card */}
                     <div
-                        className={`backdrop-blur-md overflow-hidden shadow-lg rounded-xl border ${selectedTaskFilter === "open" ? "border-blue-400" : "border-gray-200"
-                            } bg-gray-900/10 dark:bg-gray-100/10`}
+                        className={`backdrop-blur-md overflow-hidden shadow-lg rounded-xl border ${selectedTaskFilter === "open" ? "border-blue-400" : "border-gray-200"} bg-gray-900/10 dark:bg-gray-100/10`}
                         whileHover={{
                             y: -5,
                             boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)",
@@ -31,26 +29,17 @@ const TableConfig = ({ children, updateFilters }) => {
                         onClick={() => OpenOrClosedTaskChangeHandler("open")}
                     >
                         <div className="px-4 py-5 sm:p-6 cursor-pointer">
-                            <span
-                                className="flex items-center text-sm font-medium text-black dark:text-white"
-
-                            >
-                                <div
-                                    className="p-2 rounded-full mr-2 "
-                                    style={{ backgroundColor: "#c1e5f5" }} // Light blue background for the icon
-                                >
-                                    <LayoutList size={20} style={{ color: "#000000" }} /> {/* Black icon */}
+                            <span className="flex items-center text-sm font-medium text-black dark:text-white">
+                                <div className="p-2 rounded-full mr-2" style={{ backgroundColor: "#c1e5f5" }}>
+                                    <Users size={20} style={{ color: "#000000" }} />
                                 </div>
                                 Open Tasks
                             </span>
-                            <p className="mt-1 text-3xl font-semibold dark:text-white">9</p>
+                            <p className="mt-1 text-3xl font-semibold dark:text-white">2,345</p>
                         </div>
                     </div>
-
-                    {/* Closed Tasks Card */}
                     <div
-                        className={`backdrop-blur-md overflow-hidden shadow-lg rounded-xl border ${selectedTaskFilter === "closed" ? "border-blue-400" : "border-gray-200"
-                            } bg-gray-900/10 dark:bg-gray-100/10`}
+                        className={`backdrop-blur-md overflow-hidden shadow-lg rounded-xl border ${selectedTaskFilter === "closed" ? "border-blue-400" : "border-gray-200"} bg-gray-900/10 dark:bg-gray-100/10`}
                         whileHover={{
                             y: -5,
                             boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)",
@@ -58,19 +47,13 @@ const TableConfig = ({ children, updateFilters }) => {
                         onClick={() => OpenOrClosedTaskChangeHandler("closed")}
                     >
                         <div className="px-4 py-5 sm:p-6 cursor-pointer">
-                            <span
-                                className="flex items-center text-sm font-medium dark:text-white"
-
-                            >
-                                <div
-                                    className="p-2 rounded-full mr-2 "
-                                    style={{ backgroundColor: "#e7704b" }} // Orange background for the icon
-                                >
-                                    <LayoutList size={20} style={{ color: "#000000" }} /> {/* Black icon */}
+                            <span className="flex items-center text-sm font-medium text-black dark:text-white">
+                                <div className="p-2 rounded-full mr-2" style={{ backgroundColor: "#e7704b" }}>
+                                    <Users size={20} style={{ color: "#000000" }} />
                                 </div>
-                                Delayed Tasks
+                                Closed Tasks
                             </span>
-                            <p className="mt-1 text-3xl font-semibold dark:text-white">3</p>
+                            <p className="mt-1 text-3xl font-semibold dark:text-white">2,345</p>
                         </div>
                     </div>
                 </div>

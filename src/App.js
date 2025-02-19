@@ -30,25 +30,25 @@ function App() {
 
   const accordionItems = [
     {
-      title: 'Form Component',
-      content: <Component1 />
+      title: 'Tasks',
+      content: <TasksPage />
     },
   ];
 
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-gray-50 dark:bg-gray-900">
-      {/* <TopHeader />
+      <TopHeader />
       <div className="flex flex-1 overflow-hidden">
         <SidebarPage isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <main className={`flex-1 overflow-auto p-4 transition-all duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-20'}`}>
           <Routes>
-            <Route path="/tasks" element={<TasksPage />} />
+            <Route path="/tasks" element={<TasksAccordion items={accordionItems} />} />
             <Route path="/products" element={<ProductsPage />} />
-           
+
           </Routes>
         </main>
-      </div> */}
-      <TasksAccordion items={accordionItems} />
+      </div>
+
     </div>
   );
 }

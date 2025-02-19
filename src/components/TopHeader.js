@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
     Bell,
-    LayoutGrid, // Import LayoutGrid
+    LayoutGrid,
     Moon,
     Sun,
     Heart,
@@ -9,12 +9,32 @@ import {
     Settings,
     LogOut,
 } from 'lucide-react';
-import logo from '../assets/logop.png'; // Import the logo
+import logo from '../assets/logop.png';
+import userPicture from '../assets/userlogo.png';
 
 const TopHeader = () => {
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [isAppsOpen, setIsAppsOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const profileRef = useRef(null);
+    const appsRef = useRef(null);
+
+    const handleClickOutside = (event) => {
+        if (profileRef.current && !profileRef.current.contains(event.target)) {
+            setIsProfileOpen(false);
+        }
+        if (appsRef.current && !appsRef.current.contains(event.target)) {
+            setIsAppsOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     useEffect(() => {
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -76,7 +96,7 @@ const TopHeader = () => {
                         </button>
 
                         {/* Apps */}
-                        <div className="relative">
+                        <div className="relative" ref={appsRef}>
                             <button
                                 type="button"
                                 className="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -127,7 +147,7 @@ const TopHeader = () => {
                         </button>
 
                         {/* User Menu */}
-                        <div className="relative">
+                        <div className="relative" ref={profileRef}>
                             <button
                                 type="button"
                                 className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -138,8 +158,8 @@ const TopHeader = () => {
                             >
                                 <span className="sr-only">Open user menu</span>
                                 <img
-                                    className="w-10 h-10 rounded-full"
-                                    src="https://api.dicebear.com/7.x/ лица/svg?seed=Callie"
+                                    className="w-10 h-8 rounded-full"
+                                    src={userPicture}
                                     alt="user photo"
                                 />
                             </button>
