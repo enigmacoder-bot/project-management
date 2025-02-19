@@ -19,6 +19,7 @@ const TableData = ({ tableData, showDate, sortTableData, columnSetting }) => {
     };
 
     function sortDataHandler(event) {
+        console.log(event);
         let name = event.target.dataset.name;
         let order = event.target.dataset.sort;
         if (event.target.dataset.sort === "aesc") {
@@ -53,7 +54,7 @@ const TableData = ({ tableData, showDate, sortTableData, columnSetting }) => {
                                                 : undefined
                                         }
                                     >
-                                        <span>{current.columnName}</span>
+                                        {current.columnName}
                                         <svg
                                             className="w-3 h-3 ms-1.5 inline cursor-pointer"
                                             aria-hidden="true"
