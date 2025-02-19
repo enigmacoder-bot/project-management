@@ -78,11 +78,16 @@ const TableConfigFilter = ({
 
     const handleReset = () => {
         setInputs({
-            input1: "",
-            input2: "",
-            input3: "",
-            input4: "",
+            projectFilter: "",
+            targetedFilter: "",
+            statusFilter: ""
         });
+        console.log('input', inputs);
+        updateFilters({
+            projectFilter: "",
+            targetedFilter: "",
+            statusFilter: ""
+        }, "tableFilters");
         setIsOpen(false); // Close dropdown after resetting
     };
 
