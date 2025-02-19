@@ -6,6 +6,7 @@ import SidebarPage from './pages/SidebarPage';
 import TasksPage from './pages/TasksPage';
 import ProductsPage from './pages/ProductsPage';
 import TasksAccordion from './components/TasksAccordion'
+import ProductTable from './components/ProductTable';
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -44,7 +45,7 @@ function App() {
           <Routes>
             <Route path="/tasks" element={<TasksAccordion items={accordionItems} />} />
             <Route path="/products" element={<ProductsPage />} />
-
+            <Route path="/dashboard" element={<ProductTable />} />
           </Routes>
         </main>
       </div>

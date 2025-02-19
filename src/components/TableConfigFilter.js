@@ -187,15 +187,15 @@ const TableConfigFilter = ({
 
                         {/* Dropdown Menu */}
                         {isOpen && (
-                            <div className="absolute left-0 mt-2 w-96 bg-white divide-y divide-gray-200 rounded-xl shadow-lg dark:bg-gray-800 z-10 p-4">
-                                <div className="grid grid-cols-2 gap-6">
-                                    <div className="flex flex-col space-y-4">
+                            <div className="absolute left-0 mt-2 w-[500px] h-[220px] bg-white divide-y divide-gray-200 rounded-2xl shadow-2xl dark:bg-gray-800 z-20 p-6">
+                                <div className="grid grid-cols-2 gap-8">
+                                    <div className="flex flex-col space-y-6">
                                         <input
                                             type="text"
                                             name="projectFilter"
                                             value={inputs.projectFilter}
                                             onChange={tableColumnFilterHandler}
-                                            className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                            className="border border-gray-300 p-4 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
                                             placeholder="Enter Project Name"
                                         />
                                         <input
@@ -203,33 +203,33 @@ const TableConfigFilter = ({
                                             name="statusFilter"
                                             value={inputs.statusFilter}
                                             onChange={tableColumnFilterHandler}
-                                            className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                            className="border border-gray-300 p-4 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
                                             placeholder="Enter Status"
                                         />
                                     </div>
-                                    <div className="flex flex-col space-y-4">
+                                    <div className="flex flex-col space-y-6">
                                         <input
                                             type="text"
                                             name="targetedFilter"
                                             value={inputs.targetedFilter}
                                             onChange={tableColumnFilterHandler}
-                                            className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                                            className="border border-gray-300 p-4 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
                                             placeholder="Enter Target"
                                         />
                                     </div>
                                 </div>
 
                                 {/* Apply and Reset buttons */}
-                                <div className="flex justify-between mt-4">
+                                <div className="flex justify-between mt-8">
                                     <button
                                         onClick={handleReset}
-                                        className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md transition"
+                                        className="bg-red-500 hover:bg-red-600 text-white py-3 px-6 rounded-xl shadow-md transition"
                                     >
                                         Reset
                                     </button>
                                     <button
                                         onClick={handleApply}
-                                        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md transition"
+                                        className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-xl shadow-md transition"
                                     >
                                         Apply
                                     </button>
